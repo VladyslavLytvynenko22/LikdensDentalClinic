@@ -49,6 +49,5 @@ namespace LikdensDentalClinic.Domain.Dto
         public DateTime? DateOfRegistration { get; set; }
 
         public int? Doctor { get; set; }
-
     }
 }
