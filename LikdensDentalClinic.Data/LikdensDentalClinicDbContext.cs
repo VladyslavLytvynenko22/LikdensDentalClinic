@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
-using LikdensDentalClinic.Domain.Models;
+﻿using LikdensDentalClinic.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LikdensDentalClinic.Data
 {
     public class LikdensDentalClinicDbContext : DbContext
     {
-        LikdensDentalClinicDbContext(){}
+        private LikdensDentalClinicDbContext()
+        { }
 
-        LikdensDentalClinicDbContext(DbContextOptions<LikdensDentalClinicDbContext> options) : base(options) { }
+        private LikdensDentalClinicDbContext(DbContextOptions<LikdensDentalClinicDbContext> options) : base(options)
+        {
+        }
 
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<Service> Services { get; set; }

@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LikdensDentalClinic.Web", "LikdensDentalClinic\LikdensDentalClinic.Web.csproj", "{D4A6E91E-8CC4-45AF-B150-5BB37D79A79E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikdensDentalClinic.Data", "LikdensDentalClinic.Data\LikdensDentalClinic.Data.csproj", "{B5B40D0D-4BB4-4662-92E8-BB58C9FD1C62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LikdensDentalClinic.Data", "LikdensDentalClinic.Data\LikdensDentalClinic.Data.csproj", "{B5B40D0D-4BB4-4662-92E8-BB58C9FD1C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikdensDentalClinic.Domain", "LikdensDentalClinic.Domain\LikdensDentalClinic.Domain.csproj", "{D3FD5116-66CC-479E-B358-FDF4EF81848C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LikdensDentalClinic.Domain", "LikdensDentalClinic.Domain\LikdensDentalClinic.Domain.csproj", "{D3FD5116-66CC-479E-B358-FDF4EF81848C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikdensDentalClinic.Core", "LikdensDentalClinic.Core\LikdensDentalClinic.Core.csproj", "{33B2EAEE-F81E-4DF1-83BA-8116804CAEEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D3FD5116-66CC-479E-B358-FDF4EF81848C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3FD5116-66CC-479E-B358-FDF4EF81848C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3FD5116-66CC-479E-B358-FDF4EF81848C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B2EAEE-F81E-4DF1-83BA-8116804CAEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B2EAEE-F81E-4DF1-83BA-8116804CAEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B2EAEE-F81E-4DF1-83BA-8116804CAEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B2EAEE-F81E-4DF1-83BA-8116804CAEEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
