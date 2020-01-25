@@ -14,8 +14,8 @@ namespace LikdensDentalClinic.Core
             CreateMap<Staff, StaffDto>();
             CreateMap<StaffDto, Staff>();
 
-            CreateMap<Service, ServiceDto>();
-            CreateMap<ServiceDto, Service>();
+            CreateMap<Price, PriceDto>();
+            CreateMap<PriceDto, Price>();
         }
     }
 }

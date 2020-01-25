@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LikdensDentalClinic.Core.Staffs
+namespace LikdensDentalClinic.Core.Services
 {
-    public class StaffStaff
+    public class StaffService
     {
         private readonly LikdensDentalClinicDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public StaffStaff(LikdensDentalClinicDbContext dbContext, IMapper mapper)
+        public StaffService(LikdensDentalClinicDbContext dbContext, IMapper mapper)
         {
             this._dbContext = dbContext;
             this._mapper = mapper;
@@ -40,11 +40,11 @@ namespace LikdensDentalClinic.Core.Staffs
             return StaffDto;
         }
 
-        public async Task<StaffDto> UpdateStaff(int id, StaffDto StaffDto)
+        public async Task<StaffDto> UpdateStaff(StaffDto StaffDto)
         {
-            if (_dbContext.Staff.FirstOrDefault(c => c.Id == id) == null)
+            if (_dbContext.Staff.FirstOrDefault(c => c.Id == StaffDto.Id) == null)
             {
-                throw new Exception($"Unable to update. Staff id: {id} not found.");
+                throw new Exception($"Unable to update. Staff id: {StaffDto.Id} not found.");
             }
             Staff newStaff = _mapper.Map<Staff>(StaffDto);
 
