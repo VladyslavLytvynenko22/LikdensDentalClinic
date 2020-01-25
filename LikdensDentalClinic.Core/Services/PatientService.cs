@@ -40,13 +40,15 @@ namespace LikdensDentalClinic.Core.Services
             return patientDto;
         }
 
-        public async Task<PatientDto> UpdatePatient(int id, PatientDto patientDto)
+        public async Task<PatientDto> UpdatePatient(PatientDto newPatientDto)
         {
-            if (_dbContext.Patients.FirstOrDefault(c => c.Id == id) == null)
+            var oldPatient = _dbContext.Patients.FirstOrDefault(c => c.Id == newPatientDto.Id);
+            if (oldPatient == null)
             {
-                throw new Exception($"Unable to update. Patient id: {id} not found.");
+                throw new Exception($"Unable to update. Patient id: {newPatientDto.Id} not found.");
             }
-            Patient newPatient = _mapper.Map<Patient>(patientDto);
+
+            Patient newPatient = _mapper.Map<Patient>(newPatientDto);
 
             newPatient = _dbContext.Patients.Update(newPatient)?.Entity;
 

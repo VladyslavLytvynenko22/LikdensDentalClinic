@@ -1,7 +1,11 @@
+using AutoMapper;
+using LikdensDentalClinic.Core.Services;
+using LikdensDentalClinic.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,6 +28,17 @@ namespace LikdensDentalClinic
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<LikdensDentalClinicDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            services.AddTransient<PatientService>();
+            services.AddTransient<PriceService>();
+            services.AddTransient<StaffService>();
+
+            services.AddAutoMapper();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -46,7 +61,7 @@ namespace LikdensDentalClinic
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    template: "{controller}/{action}/{id?}");
             });
 
             app.UseSpa(spa =>
